@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MLB Foul Ball Seating Optimizer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      line-height: 1.6;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 1rem 0;
+    }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      margin-top: 2rem;
+    }
+    a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>MLB Foul Ball Seating Optimizer</h1>
+
+  <p><strong>Class:</strong> Intro to Statistics (RStudio Project)</p>
+
+  <p>This project uses real-world foul ball data from Baseball Savant to help fans identify where to sit in MLB stadiums to either maximize their chances of catching a foul ball or minimize risk of injury. We explored ball exit velocity, type of hit, and zones of impact. This study was originally completed as part of my introductory statistics course using RStudio for data analysis and visualization.</p>
+
+  <h2>🧹 Data Cleaning</h2>
+  <p>We removed null values from critical columns like <code>type_of_hit</code>, <code>predicted_zone</code>, and <code>camera_zone</code> using R dplyr filtering.</p>
+
+  <h2>📊 Zone Risk Analysis</h2>
+  <p>Foul balls were classified as low, medium, or high risk based on exit velocity. We found:</p>
+  <ul>
+    <li>Zone 1: Safest (protected by nets, mostly low-risk hits)</li>
+    <li>Zones 2-5: Most dangerous (high velocity line/fly balls)</li>
+    <li>Zones 6-7: Exclusively fly balls, further from plate</li>
+  </ul>
+
+  <h2>🎯 Key Takeaways</h2>
+  <ul>
+    <li>Spectators wanting to catch foul balls should sit in Zones 2–5</li>
+    <li>Safety-conscious fans should sit in Zones 1 or 7</li>
+    <li>Model predictions closely matched actual foul ball landings, showing high accuracy</li>
+  </ul>
+
+  <h2>📄 Full Paper</h2>
+  <iframe src="../files/Foul_Ball_Project_Paper.pdf"></iframe>
+
+  <p><a href="../index.html">← Back to Portfolio</a></p>
+
+</body>
+</html>
+
