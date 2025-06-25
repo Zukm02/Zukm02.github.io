@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jarvis Vectorization App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      margin-top: 1rem;
+    }
+    code {
+      background: #f2f2f2;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Jarvis Vectorization App</h1>
+
+  <p><strong>Team:</strong> Ty Joe, Gavin Glosser, Matt Zuk <br>
+  <strong>Date:</strong> December 2023 <br>
+  <strong>Course:</strong> Data Science 1</p>
+
+  <h2>🔧 Project Overview</h2>
+  <p>Jarvis is a custom Slack bot designed to interpret natural language commands using vectorization and classification techniques. Users can train Jarvis to recognize custom actions and then test it by inputting related phrases. The bot uses a simple state machine to switch between training and testing modes, making it both interactive and adaptable.</p>
+
+  <h2>🧠 NLP & Classification</h2>
+  <p>Jarvis uses a three-step machine learning pipeline:</p>
+  <ul>
+    <li><code>CountVectorizer()</code> – Tokenizes training text into feature vectors</li>
+    <li><code>TfidfTransformer()</code> – Weighs word importance using TF-IDF</li>
+    <li><code>MultinomialNB()</code> – Trains a Naive Bayes classifier for intent prediction</li>
+  </ul>
+
+  <pre><code>Pipeline([
+  ('vect', CountVectorizer()),
+  ('tfidf', TfidfTransformer()),
+  ('clf', MultinomialNB()),
+])</code></pre>
+
+  <p>This combination allows Jarvis to categorize user inputs into the most likely action label, even when different wording is used.</p>
+
+  <h2>🧪 Training Process</h2>
+  <p>Users can type <code>training time</code> in Slack to start teaching Jarvis. After labeling an action and giving example phrases, typing <code>done</code> ends the training. Jarvis stores this data in a custom database structure using "bunches" to organize it efficiently.</p>
+
+  <h2>🧪 Testing Results</h2>
+  <p>Jarvis correctly identified:</p>
+  <ul>
+    <li>✅ 100% of single-keyword questions</li>
+    <li>✅ 60% of multi-keyword questions</li>
+  </ul>
+  <p>Future improvements could include expanding training data and refining intent matching to handle compound or ambiguous phrases.</p>
+
+  <h2>📽️ Demo Video</h2>
+  <iframe src="https://www.youtube.com/embed/UbBDP-t_SiI" title="Jarvis App Demo"></iframe>
+
+  <h2>📄 Full Paper (Coming Soon)</h2>
+  <p>A PDF breakdown of the design, code, and evaluation will be available soon.</p>
+
+  <p><a href="../index.html">← Back to Portfolio</a></p>
+
+</body>
+</html>
+
